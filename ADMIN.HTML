@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add Project — Admin</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+  <h1>My Portfolio — Admin</h1>
+  <hr>
+
+  <h2>Add a Project</h2>
+  <div class="admin-card">
+    <form id="adminForm">
+      <input type="password" id="password" placeholder="Admin Password" required>
+      <input type="text" id="projectName" placeholder="Project Name" required>
+      <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+      <button type="submit">Add Project</button>
+    </form>
+    <p id="adminStatus"></p>
+  </div>
+
+  <p><a href="INDEX.HTML">&larr; Back to portfolio</a></p>
+
+  <script>
+    const adminForm = document.getElementById("adminForm");
+    const adminStatus = document.getElementById("adminStatus");
+
+    adminForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const name = document.getElementById("projectName").value;
+      const description = document.getElementById("projectDescription").value;
+
+      adminStatus.textContent = "Saving...";
+
+      try {
+        const response = await fetch("/api/projects", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ password, name, description })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          adminStatus.textContent = data.success;
+          adminForm.reset();
+        } else {
+          adminStatus.textContent = data.error || "Something went wrong.";
+        }
+      } catch (error) {
+        adminStatus.textContent = "Could not connect to server.";
+        console.error(error);
+      }
+    });
+  </script>
+
+</body>
+</html>

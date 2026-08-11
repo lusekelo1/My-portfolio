@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Blogging Platform",
+    "description": "A platform for writing and publishing blog posts."
+  },
+  {
+    "name": "Task Management",
+    "description": "An app for organizing and tracking tasks."
+  },
+  {
+    "name": "Expense Tracker with Analytics",
+    "description": "Tracks expenses and visualizes spending patterns."
+  }
+]

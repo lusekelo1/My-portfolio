@@ -1,0 +1,170 @@
+/* ============================================
+   MY PORTFOLIO — Stylesheet
+   Matches index.html structure: h1, hr, h2, p, ol
+   ============================================ */
+
+/* --- Reset & base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: "Segoe UI", "Consolas", Arial, sans-serif;
+  line-height: 1.7;
+  padding: 2rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Main heading (Hi, my name is...) --- */
+h1 {
+  font-size: 2.2rem;
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Divider under H1 --- */
+hr {
+  border: none;
+  border-top: 2px solid #30363d;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Section headings: Hero, About Me, Skills, Projects, Interest, Contact --- */
+h2 {
+  font-size: 1.5rem;
+  color: #79c0ff;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  border-left: 4px solid #3fb950;
+  padding-left: 0.6rem;
+}
+
+/* --- Paragraphs (intro text, about me, skills categories, etc.) --- */
+p {
+  margin-bottom: 1rem;
+  color: #c9d1d9;
+}
+
+/* --- Ordered lists (skills, projects, interests, contact) --- */
+ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+  color: #c9d1d9;
+}
+
+/* --- Links (LinkedIn profile, etc.) --- */
+a {
+  color: #3fb950;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #56d364;
+}
+
+/* --- Contact form --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+input,
+textarea {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  color: #c9d1d9;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8b949e;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  background-color: #3fb950;
+  color: #0d1117;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #56d364;
+}
+
+#formStatus {
+  margin-top: 0.8rem;
+  color: #79c0ff;
+  font-size: 0.95rem;
+}
+
+/* --- Admin page card --- */
+.admin-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 500px;
+}
+
+#adminStatus {
+  margin-top: 0.8rem;
+  color: #79c0ff;
+  font-size: 0.95rem;
+}
+
+/* --- Small responsive tweak for phones --- */
+@media (max-width: 480px) {
+  body {
+    padding: 1.2rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
